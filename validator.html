@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+<form action="#" class="regForm" id="regForm">
+    <div>
+        <label>
+            Имя <br>
+            <input type="text" name="name" id="name">
+        </label>
+    </div>
+    <div>
+        <label>
+            Фамилия <br>
+            <input type="text" name="surname" id="surname">
+        </label>
+    </div>
+    <div>
+        <label>
+            Электронная почта <br>
+            <input type="email" name="email" id="email">
+        </label>
+    </div>
+    <div>
+        <label>
+            Пароль <br>
+            <input type="password" name="pass" id="pass">
+        </label>
+    </div>
+    <div>
+        <label>
+            Проверка пароля <br>
+            <input type="password" name="checkPass" id="checkPass">
+        </label>
+    </div>
+    <div>
+        <label>
+            Дата рождения <br>
+            <input type="date" name="age" id="age">
+        </label>
+    </div>
+    <button id="val-btn">Отправить</button>
+</form>
+<script src="Validator.js"></script>
+<script>
+    window.onload = () => {
+        document.getElementById('regForm').addEventListener('submit', e => {
+            let valBtn = document.getElementById('val-btn');
+            let valid = new Validator('regForm');
+            if(!valid.valid){  
+                e.preventDefault();
+            } 
+        })
+    }
+</script>
+</body>
+</html>
